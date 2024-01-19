@@ -1,0 +1,132 @@
+/*Configuracion*/
+
+:root{
+    --fondosNaranjas:rgb(236, 135, 3);
+    --light-color: #ffff;
+
+    --menu: Poppins-bold;
+    --titulo: lobster;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}    
+
+@font-face {
+    font-family: lobster;
+    src: url('.assets/fonts/Lobster-Regular.ttf');
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('./assets/fonts/Poppins-Bold.ttf');
+}
+
+
+/*Header*/
+
+header{
+    background: var(--fondosNaranjas);
+    text-align: center;
+    font-size: 50px;
+    border: 1px solid black;
+    width: auto;
+}
+
+h2{
+    font-family: var(--titulo);
+    font-size: 50px;
+    margin: 15px;
+    border-bottom: 3px solid black;
+    border-radius: 10px;
+}
+
+.nav{
+    align-items: center;
+    border: 1px solid black;
+    font-family: var(--menu);
+    font-size: 25px;
+}
+
+.logo-nav {
+    margin-top: 25px;
+    margin-bottom:25px ;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-size: 18px;
+    margin: 5px;
+    padding: 0px;
+    width: 1350px;
+    height: 70px;
+}
+
+nav ul li{
+    margin:5px;
+}
+
+nav ul li a{
+    color: var(--light-color);
+    text-decoration: none;
+    cursor:pointer;
+}
+
+nav ul li a:hover{
+    color: black;
+    transition: 1s;
+}
+
+.foto{
+    background: black;
+    height: 280px;
+    text-align: center;
+    text-align: center;
+    color: white;
+    padding-top: 200px;
+    font-size: 150px;
+}
+
+@media(max-width:800px){
+    h2{
+        display: flex;
+        justify-content: center;
+    }    
+    .foto{
+        padding-top: 30px;
+        height: 100%;
+    }
+    nav ul{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 96%;
+        height: auto;
+    }
+}
+
+/*End Header*/
+
+/*Scrollbar*/
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgb(184, 103, 11);
+}
+
+/**/
+
