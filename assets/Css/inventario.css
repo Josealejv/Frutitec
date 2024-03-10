@@ -1,0 +1,106 @@
+/*Configuracion*/
+
+:root {
+    --fondosNaranjas: rgb(233, 148, 37);
+    --light-color: #ffff;
+
+    --titulo: lobster;
+    --menu: Poppins-bold;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: var(--fondosNaranjas);
+
+}
+
+@font-face {
+    font-family: lobster;
+    src: url('.assets/fonts/Lobster-Regular.ttf');
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('./assets/fonts/Poppins-Bold.ttf');
+}
+
+/*Header*/
+
+header {
+    background: var(--fondosNaranjas);
+    font-size: 50px;
+    border: 1px solid black;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+h2 {
+    text-align: center;
+    font-family: var(--titulo);
+    font-size: 50px;
+    margin: 15px;
+    border-bottom: 3px solid black;
+    border-radius: 10px;
+    margin-right: 400px;
+}
+
+img {
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 400px;
+    margin-top: 10px;
+}
+
+.seccion {
+    margin-top: 50px;
+    margin-left: 470px;
+    font-family: var(--menu);
+    font-size: 25px;
+}
+
+.seccion input {
+    width: 150px;
+    margin: 20px;
+}
+
+.seccion2 {
+    margin-top: 50px;
+    margin-left: 425px;
+    font-family: var(--menu);
+    font-size: 25px;
+}
+
+.seccion2 input {
+    margin: 20px;
+    width: 150px;
+}
+
+ul{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 22px;
+    padding: 0px;
+    margin-top: 80px;
+    height: 70px;
+    list-style: none;
+}
+
+ul li{
+    border: 2px solid black;
+    font-family: var(--menu);
+    background: rgb(210, 210, 29);
+    padding: 8px;
+    
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+}
