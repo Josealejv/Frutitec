@@ -48,7 +48,8 @@ header{
 }
 
 h4{
-    color: var(--light-color);
+   font-family: var(--menu);
+    color: white;
 }
 
 nav ul{
@@ -80,90 +81,48 @@ nav ul li a:hover{
    
 }
 
-.container {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.proveedores{
-    font-size: 35px;
-    margin: 25px 0px 0px 20px;
-    padding: 0px;
+form{
+    margin: 60px 550px 0px 550px;
     font-family: var(--menu);
-
+    border: 3px solid #333a73;
+    border-radius: 7px;
 }
 
-.proveedores a {
-    text-decoration: none;
-    color: black;
+h2{
+    text-align: center;
 }
 
-.añadir {
-    font-size: 18px;
-    margin: 35px 0px 0px 15px;
-    padding: 5px;
-    font-family: var(--menu);
-    background: #333A73;
-    border-radius: 2px;
-}
-
-.añadir a{
-    text-decoration: none;
-    color:white;
-    cursor: pointer;
-}
-
-table{
-    margin-top: 25px;
+label{
     font-size: 20px;
     font-family: var(--menu);
-    width: 100%;
-    text-align: center;
+    margin: 10px 150px 30px 150px;
 }
 
-.pri{
-    background:  #387ADF;
-    color: var(--light-color);
-}
-
-td{
-    padding: 0px 50px 0px 50px;
-}
-
-.tabla2 td{
-    border-top: 2px solid #387ADF ;
+input{
+    margin: 20px 120px 20px 20px;
+    border: none;
     padding: 5px;
-    text-align: center;
-    color: #000;
+    
 }
 
-
-.eliminar{
-    text-decoration: none;
-    padding: 2px 5px 2px 5px;
-    color: white;
-    background: red;
+ input:hover{
+    border: 3px solid #387ADf;
     border-radius: 3px;
-    font-family: var(--menu);
-    margin-top: 8px;
-  
 }
 
-.editar{
-    text-decoration: none;
-    padding: 2px 5px 2px 5px;
-    color: white;
-    background: green;
+input:focus{
+    border: 3px solid #387ADf;
     border-radius: 3px;
-    font-family: var(--menu);
-    margin-top: 8px;
+    outline: none;
 }
 
-footer{
-    background: var(--fondosNaranjas);
-    width: 100%;
-    text-align: center;
-    margin-top: 350px;
-    position:absolute;
-} 
+.btn{
+    background: #387ADf;
+    color: var(--light-color);
+    cursor: pointer;
+    padding: 5px;
+    margin: 10px 150px 30px 130px;
+    border: 2px solid #50c4ed;
+    font-size: 16px;
+}
 

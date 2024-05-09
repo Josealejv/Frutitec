@@ -1,0 +1,65 @@
+/*Configuracion*/
+
+:root{
+    --fondosNaranjas:rgb(236, 135, 3);
+    --light-color: #ffff;
+
+    --menu: Poppins-bold;
+    --titulo: lobster;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;   
+}    
+
+@font-face {
+    font-family: lobster;
+    src: url('.assets/fonts/Lobster-Regular.ttf');
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('./assets/fonts/Poppins-Bold.ttf');
+}
+
+form{
+    margin: 80px 550px 0px 550px;
+    font-family: var(--menu);
+    border: 3px solid var(--fondosNaranjas);
+    border-radius: 3px;
+    height: 450px;
+    width: auto;
+}
+
+h1{
+    padding-left: 15px;
+}
+
+form input{
+    padding: 8px;
+    margin: 20px;
+    border: none;
+}
+
+.btn{
+    background: #42b72a;
+    border-radius: 6px;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+
+}
+
+input:hover{
+    border: 3px solid rgb(236, 135, 3);
+    border-radius: 3px;
+}
+
+input:focus{
+    border: 3px solid rgb(236, 135, 3);
+    border-radius: 3px;
+    outline: none;
+}

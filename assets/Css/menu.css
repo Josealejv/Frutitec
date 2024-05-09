@@ -80,90 +80,62 @@ nav ul li a:hover{
    
 }
 
-.container {
-    display: flex;
-    justify-content: flex-start;
+@media(max-width:800px){
+    h2{
+        display: flex;
+        justify-content: center;
+    }    
+    .foto{
+        padding-top: 30px;
+        height: 100%;
+    }
+    nav ul{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 96%;
+        height: auto;
+    }
 }
 
-.proveedores{
-    font-size: 35px;
-    margin: 25px 0px 0px 20px;
-    padding: 0px;
-    font-family: var(--menu);
+/*End Header*/
 
+/*Scrollbar*/
+
+::-webkit-scrollbar{
+    width: 15px;
 }
 
-.proveedores a {
-    text-decoration: none;
-    color: black;
+::-webkit-scrollbar-track{
+    background: #ccc;
 }
 
-.añadir {
-    font-size: 18px;
-    margin: 35px 0px 0px 15px;
-    padding: 5px;
-    font-family: var(--menu);
-    background: #333A73;
-    border-radius: 2px;
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgb(184, 103, 11);
 }
 
-.añadir a{
-    text-decoration: none;
-    color:white;
-    cursor: pointer;
-}
-
-table{
-    margin-top: 25px;
+.mision{
+    float: right;
+    text-align: center;
+    width: 200px;
+    height: auto;
     font-size: 20px;
     font-family: var(--menu);
-    width: 100%;
+    border: 2px solid var(--fondosNaranjas);
+    margin-right: 500px;
+    margin-top: 50px;
+}
+
+.vision{
+    float: right;
     text-align: center;
-}
-
-.pri{
-    background:  #387ADF;
-    color: var(--light-color);
-}
-
-td{
-    padding: 0px 50px 0px 50px;
-}
-
-.tabla2 td{
-    border-top: 2px solid #387ADF ;
-    padding: 5px;
-    text-align: center;
-    color: #000;
-}
-
-
-.eliminar{
-    text-decoration: none;
-    padding: 2px 5px 2px 5px;
-    color: white;
-    background: red;
-    border-radius: 3px;
+    display: inline-block;
+    width: 250px;
+    height: auto;
+    font-size: 20px;
     font-family: var(--menu);
-    margin-top: 8px;
-  
+    border: 2px solid var(--fondosNaranjas);
+    margin-right: 200px;
+    margin-top: -500px;
 }
-
-.editar{
-    text-decoration: none;
-    padding: 2px 5px 2px 5px;
-    color: white;
-    background: green;
-    border-radius: 3px;
-    font-family: var(--menu);
-    margin-top: 8px;
-}
-
-footer{
-    background: var(--fondosNaranjas);
-    width: 100%;
-    text-align: center;
-    margin-top: 350px;
-    position:absolute;
-} 
-

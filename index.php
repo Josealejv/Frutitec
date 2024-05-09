@@ -3,43 +3,50 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/Css/styles.css">
+    <link rel="stylesheet" href="./assets/Css/index.css">
     <link rel="icon" href="./assets/images/Logo.ico">
-    <title>Frutitec</title>
+    <title>Inicio de Sesion</title>
+
 </head>
 
 <body>
 
-    <!--HEADER-->
-    <header>
-        <h2>Frutitec</h2>
-        
-        <nav>
+    <img src="./assets/images/Logo.jpg" height="35%" width="15%">
 
-            <ul>
-                <li><img src="./assets/images/Logo.jpg" alt="LogoFrutitec" height="60px" class="logo-nav"></li>
- 
-                <li><a href="./assets/PHP/productos.php">Productos</a></li>
+    <div class="Formulario">
 
-                <li><a href="./assets/PHP/proveedores.php">Proveedores</a></li>
+        <h2>Inicio de Sesion</h2>
 
-                <li><a href="./assets/PHP/pedidos.php">Pedidos</a></li>
+        <form action="./assets/PHP/conexion.php" method="post">
 
-                <li><a href="./assets/PHP/inventario.php">Inventario</a></li>
+            <div class="correo">
 
-                <li><a href="./assets/PHP/ventas.php">Ventas</a></li>
+                <input type="text" id="usuario" name="usuario" placeholder=" " required>
+                <label for="usuario">Nombre de usuario:</label>
 
-                <li><a href="./assets/PHP/clientes.php">Clientes</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!--END HEADER-->
+            </div>
 
-    <section>
-        <div class="foto">Una imagen</div>
-    </section>
+            <div class="Clave">
+
+                <input type="password" id="contrasena" name="contrasena" placeholder=" " required>
+                <label for="contrasena">Contraseña:</label>
+
+            </div>
+
+            <input type="submit" value="Iniciar sesión">
+
+        </form>
+
+    </div>
+
+    <div class="nuevoUsuario">
+        <a href="./assets/PHP/nuevoUsuario.php">Crear Nuevo Usuario</a>
+    </div>
 
 </body>
 
 </html>
+
+</form>

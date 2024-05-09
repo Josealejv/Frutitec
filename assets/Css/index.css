@@ -1,0 +1,175 @@
+:root {
+    --menu: Poppins-bold;
+    --titulo: lobster;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: lobster;
+    src: url('..assets/fonts/Lobster-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(235, 137, 17);
+    background: linear-gradient(90deg, rgba(235, 137, 17, 1) 0%, rgba(204, 131, 20, 1) 39%, rgb(220, 137, 4) 100%);
+    height: 100vh;
+}
+
+.Formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+
+.Formulario h2 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+    font-family: var(--titulo);
+    font-size: 30px;
+    border-bottom: 3px solid silver;
+}
+
+.Formulario form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+Form .correo {
+    position: relative;
+    margin: 30px 0;
+}
+
+.correo input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.correo label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.correo span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ac8608;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -5px;
+    font-size: 12px;
+    color: #ac8608;
+    font-family: var(--menu);
+}
+
+.correo input:focus~span::before,
+.correo input:focus~span::before {
+    width: 100%;
+
+}
+
+Form .Clave {
+    position: relative;
+    border-bottom: 2px solid silver;
+    margin: 30px 0;
+}
+
+.Clave input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 18 px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.Clave label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.Clave span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ac8608;
+}
+
+
+.Clave input:focus~span::before,
+.Clave input:focus~span::before {
+    width: 100%;
+
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    background: #ac8608;
+    margin: 10px;
+    font-family: var(--menu);
+    cursor: pointer;
+}
+
+img {
+    margin-top: 200px;
+    margin-left: 100px;
+}
+
+.nuevoUsuario{
+    background: #42b72a;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.nuevoUsuario a{
+    text-decoration: none;
+    color: #fff;
+}
