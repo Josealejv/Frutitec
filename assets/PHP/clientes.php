@@ -36,6 +36,10 @@
         </nav>
     </header>
 
+    <div class="container">
+        <div class="cliente"><i class="fa-solid fa-user"></i> Clientes</div>
+    </div>
+
     <div class="pri">
         <div class="sec">Registrar Nuevo Cliente</div>
         <div class="ter">Lista de Clientes</div>
@@ -54,7 +58,7 @@
                 <label>Celular</label><br>
                 <input type="text" name="celular" id="celular"><br>
 
-                <input type="submit" value="Registrar Cliente" name="insertar" class="btn"></td>
+                <input type="submit" value="Registrar Cliente" name="insertar" class="btn">
 
             </form>
         </div>
@@ -111,9 +115,6 @@
             <p>&copy; Copyright 2024 - Todos los derechos reservados
         </strong>
     </footer>
-
-
-
 
 </body>
 

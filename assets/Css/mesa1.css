@@ -1,19 +1,19 @@
 /*Configuracion*/
 
-:root {
-    --fondosNaranjas: rgb(236, 135, 3);
+:root{
+    --fondosNaranjas:rgb(236, 135, 3);
     --light-color: #ffff;
 
     --menu: Poppins-bold;
     --titulo: lobster;
 }
 
-body {
+body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
-}
+    overflow-x: hidden;   
+}    
 
 @font-face {
     font-family: lobster;
@@ -25,34 +25,35 @@ body {
     src: url('./assets/fonts/Poppins-Bold.ttf');
 }
 
+/* Fin configuracion */
 
 /*Header*/
 
-header {
+header{
     background: var(--fondosNaranjas);
     text-align: center;
     font-size: 50px;
     width: auto;
-
+    
 }
 
-.nav {
+.nav{
     font-size: 25px;
     font-family: var(--menu);
 }
 
 .logo-nav {
-    margin-top: 25px;
-    margin-bottom: 20px;
+    margin-top:25px;
+    margin-bottom:20px;
     margin-left: -35px;
-    position: relative;
+    position:relative;
 }
 
-h4 {
+h4{
     color: var(--light-color);
 }
 
-nav ul {
+nav ul{
     display: flex;
     align-items: center;
     list-style: none;
@@ -64,90 +65,69 @@ nav ul {
     font-family: var(--menu);
 }
 
-nav ul li {
-    margin: 5px;
+nav ul li{
+    margin:5px;
     margin-left: 45px;
 }
 
-nav ul li a {
+nav ul li a{
     color: var(--light-color);
     text-decoration: none;
-    cursor: pointer;
+    cursor:pointer;
 }
 
-nav ul li a:hover {
+nav ul li a:hover{
     color: black;
     transition: 1s;
-
+   
 }
 
-.container {
+/* Fin header */
+
+.icon{
     display: flex;
-    margin-top: 20px;
+    margin-top: 25px;
     justify-content: center;
     align-items: center;
 
 }
 
-.cliente {
+.icon2{
     font-size: 40px;
     font-family: var(--titulo);
 }
 
-.pri {
+.orden{
+    width: auto;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.agr_pedido{
+    width: auto;
+    display: flex;
+}
+
+.agr_pedido form input{
+    width: 100%;
+    margin-top: 40px;
+    padding: 6px 10px 6px 10px;
+}
+
+.agr_pedido form input{
+    border: 3px solid #3652AD;
+    font-size: 20px;
+}
+
+.agr_pedido form input:focus{
+    filter:drop-shadow(5px 3px 5px #3652AD);
+}
+
+.agr_pedido2{
+    width: auto;
     margin: 50px auto 0px auto;
-    width: 90%;
-    border: 2px solid var(--fondosNaranjas);
-    font-family: var(--menu);
-    font-size: 20px;
-    padding: 5px;
-    color: var(--light-color);
-    background: #3652AD;
-    border-radius: 5px;
-}
-
-.cont {
-    display: flex;
-    justify-content: space-between;
-}
-
-.nuevoCliente {
-    font-size: 20px;
-    font-family: var(--menu);
-    margin: 50px 50px 0px 100px;
-    width: auto;
-}
-
-.nuevoCliente input {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    padding: 5px;
-}
-
-.nuevoCliente input:hover {
-    border: 3px solid #3652AD;
-    border-radius: 3px;
-}
-
-.nuevoCliente input:focus {
-    border: 3px solid #3652AD;
-    border-radius: 3px;
-    outline: none;
-}
-
-.btn {
-    background: #3652AD;
-    color: var(--light-color);
-    cursor: pointer;
-    padding: 3px;
-}
-
-.clientes {
-    width: auto;
-    margin: 35px 80px 0px 140px;
 }
 
 table {
@@ -176,19 +156,12 @@ td {
     font-family: var(--menu);
 }
 
-.editar {
-    text-decoration: none;
-    padding: 2px 5px 2px 5px;
-    color: white;
-    background: green;
-    border-radius: 3px;
-    font-family: var(--menu);
-}
-
-footer {
+footer{
     background: var(--fondosNaranjas);
     width: 100%;
     text-align: center;
-    margin-top: 50px;
-    position: absolute;
-}
+    margin-top: 350px;
+    position:absolute;
+} 
+
+

@@ -47,6 +47,11 @@
                 </tr>
 
                 <tr>
+                    <td>Fecha</td>
+                    <td><input type="datetime-local" name="fecha" id="" value="<?= $fecha ?>"></td>
+                </tr>
+
+                <tr>
                     <td><input type="submit" value="Actualizar" name="insertar" class="actualizar"></td>
 
                     <td><a href="proveedores.php">BACK</a></td>

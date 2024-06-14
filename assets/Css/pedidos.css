@@ -1,19 +1,19 @@
 /*Configuracion*/
 
-:root {
-    --fondosNaranjas: rgb(236, 135, 3);
+:root{
+    --fondosNaranjas:rgb(236, 135, 3);
     --light-color: #ffff;
 
-    --titulo: lobster;
     --menu: Poppins-bold;
+    --titulo: lobster;
 }
 
-body {
+body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
-}
+    overflow-x: hidden;   
+}    
 
 @font-face {
     font-family: lobster;
@@ -25,18 +25,21 @@ body {
     src: url('./assets/fonts/Poppins-Bold.ttf');
 }
 
+/* Fin configuracion */
+
 /*Header*/
 
 header{
     background: var(--fondosNaranjas);
     text-align: center;
     font-size: 50px;
-    width: auto; 
+    width: auto;
+    
 }
 
 .nav{
-    font-family: var(--menu);
     font-size: 25px;
+    font-family: var(--menu);
 }
 
 .logo-nav {
@@ -47,7 +50,7 @@ header{
 }
 
 h4{
-    color: white;
+    color: var(--light-color);
 }
 
 nav ul{
@@ -55,10 +58,11 @@ nav ul{
     align-items: center;
     list-style: none;
     font-size: 18px;
-    margin: 5px;
+    margin: 0px;
     padding: 0px;
     width: 1350px;
     height: 45px;
+    font-family: var(--menu);
 }
 
 nav ul li{
@@ -74,56 +78,51 @@ nav ul li a{
 
 nav ul li a:hover{
     color: black;
-    transition: 1s;  
+    transition: 1s;
+   
 }
 
-.contenido{
+/* Fin header */
+
+.icon{
     display: flex;
+    margin-top: 25px;
     justify-content: center;
     align-items: center;
+
 }
 
-h2{
-    margin-left: 5px;
-    font-size: 35px;
-    font-family: var(--menu);
+.icon2{
+    font-size: 40px;
+    font-family: var(--titulo);
 }
 
-.seccion{
-    margin-top: 10px;
-    margin-left: 500px;
-    font-family: var(--menu);
-    font-size: 25px;
-}
-
-.seccion select{
-    width: 150px;
-    margin: 20px 0 40px 20px;
-    padding: 5px;
+.cont{
+    display: flex;
+    justify-content: space-around;
+    margin: 30px auto 0px auto;
+    width: 80%;
     border: 2px solid var(--fondosNaranjas);
-}
-
-.seccion textarea{
-    display: block;
-    width: 300px;
-    height: 100px;
-    margin: 30px 0 0 20px;
-    padding: 5px;
-    border: 2px solid var(--fondosNaranjas);
-}
-
-.seccion2{
-    
-    margin-top: 40px;
-    margin-left: 350px;
     font-family: var(--menu);
-    font-size: 25px;
+    font-size: 20px;
+    padding: 8px;   
+    color: var(--light-color);
+    background: #3652AD;
+    border-radius: 5px;
+    text-align: center;
 }
 
-.seccion2 select,input{
-    width: 150px;
-    margin: 20px;
-    padding: 5px;
-    border: 2px solid var(--fondosNaranjas);
+.cont a{
+    text-decoration: none;
+    color: var(--light-color);
 }
+
+footer{
+    background: var(--fondosNaranjas);
+    width: 100%;
+    text-align: center;
+    margin-top: 350px;
+    position:absolute;
+} 
+
 

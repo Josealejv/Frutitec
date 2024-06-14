@@ -19,23 +19,23 @@
 
         <h2>Inicio de Sesion</h2>
 
-        <form action="./assets/PHP/conexion.php" method="post">
+        <form action="validar.php" method="post">
 
             <div class="correo">
 
-                <input type="text" id="usuario" name="usuario" placeholder=" " required>
+                <input type="text" id="usuario" name="usuario"  >
                 <label for="usuario">Nombre de usuario:</label>
 
             </div>
 
             <div class="Clave">
 
-                <input type="password" id="contrasena" name="contrasena" placeholder=" " required>
+                <input type="password" id="contrasena" name="clave" >
                 <label for="contrasena">Contraseña:</label>
 
             </div>
 
-            <input type="submit" value="Iniciar sesión">
+            <input type="submit" value="Iniciar sesión" name="ingresar">
 
         </form>
 

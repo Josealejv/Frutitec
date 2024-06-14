@@ -1,11 +1,11 @@
 /*Configuracion*/
 
 :root {
-    --fondosNaranjas: rgb(233, 148, 37);
+    --fondosNaranjas: rgb(236, 135, 3);
     --light-color: #ffff;
 
-    --titulo: lobster;
     --menu: Poppins-bold;
+    --titulo: lobster;
 }
 
 body {
@@ -13,8 +13,6 @@ body {
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    background: var(--fondosNaranjas);
-
 }
 
 @font-face {
@@ -27,68 +25,97 @@ body {
     src: url('./assets/fonts/Poppins-Bold.ttf');
 }
 
+
 /*Header*/
 
 header {
     background: var(--fondosNaranjas);
+    text-align: center;
     font-size: 50px;
-    border: 1px solid black;
     width: auto;
+
+}
+
+.nav {
+    font-size: 25px;
+    font-family: var(--menu);
+}
+
+.logo-nav {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: -35px;
+    position: relative;
+}
+
+h4 {
+    color: var(--light-color);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+    width: 1350px;
+    height: 45px;
+    font-family: var(--menu);
+}
+
+nav ul li {
+    margin: 5px;
+    margin-left: 45px;
+}
+
+nav ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    color: black;
+    transition: 1s;
+
+}
+
+.container {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ventas{
+    font-size: 40px;
+    font-family: var(--titulo);
+}
+
+h2{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.ventaSemana, .ventasMes, .ventasAño{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
 }
 
-h2 {
+.vs, .vm, .va{
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+}
+
+
+footer {
+    background: var(--fondosNaranjas);
+    width: 100%;
     text-align: center;
-    font-family: var(--titulo);
-    font-size: 50px;
-    margin: 15px;
-    border-bottom: 3px solid black;
-    border-radius: 10px;
-    margin-right: 400px;
-}
-
-img {
-    height: 60px;
-    border-radius: 5px;
-    margin-right: 400px;
-    margin-top: 10px;
-}
-
-.seccion {
     margin-top: 50px;
-    margin-left: 450px;
-    font-family: var(--menu);
-    font-size: 25px;
-}
-
-.seccion input {
-    margin: 20px;
-    width: 120px;
-}
-
-ul{
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 22px;
-    padding: 0px;
-    margin-top: 80px;
-    height: 70px;
-    list-style: none;
-}
-
-ul li{
-    border: 2px solid black;
-    font-family: var(--menu);
-    background: rgb(210, 210, 29);
-    padding: 8px;
-    
-}
-
-ul li a{
-    text-decoration: none;
-    color: black;
+    position: absolute;
 }

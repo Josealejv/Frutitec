@@ -42,16 +42,10 @@
     </header>
     <!--END HEADER-->
 
-    <img src="../images/Logo.jpg" height="540px">
+    <img src="../images/Foto2.jpg" class="foto">
 
 
-    <div class="mision">
-        <h3>Mision</h3>Ofrecer empanadas y jugos de alta calidad, frescos y deliciosos, elaborados con ingredientes frescos y naturales, para satisfacer los gustos de nuestros clientes. Queremos ser reconocidos por brindar un servicio excepcional y una experiencia culinaria única.
-    </div>
-
-    <div class="vision">
-        <h3>Vision</h3>Nuestra visión es convertirnos en el principal referente en la venta de empanadas y jugos de la región, ofreciendo una amplia variedad de sabores y opciones para todos los gustos. Buscamos expandirnos a nuevas ubicaciones y ser reconocidos por nuestra calidad, innovación y compromiso con la satisfacción del cliente. Queremos ser el destino preferido de los amantes de las empanadas y los jugos frescos.
-    </div>
+   
 
 
 

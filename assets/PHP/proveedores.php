@@ -11,9 +11,9 @@
 </head>
 
 <body>
+    <!-- MENU DE NAVEGACION -->
     <header>
         <nav>
-
             <ul>
                 <li><img src="../images/Logo.jpg" alt="LogoFrutitec" height="35px" class="logo-nav"></li>
                 <h4>Frutitec</h4>
@@ -34,78 +34,113 @@
             </ul>
         </nav>
     </header>
+    <!-- FIN DEL MENU DE NAVEGACION -->
 
+    <!-- TITULO DE LA PAGINA -->
     <div class="container">
         <div class="proveedores"><i class="fa-solid fa-truck"></i> Lista de Proveedores</div>
-        <div class="añadir"><a href="nuevoProveedor.php"><i class="fa-solid fa-plus"></i> Añadir Proveedor</a></div>
     </div>
+    <!-- FIN  -->
 
-    <table>
-        <tr class="pri">
-            <td>Proveedor</td>
-            <td>Contacto</td>
-            <td>Celular</td>
-            <td>Direccion</td>
-            <td>Fecha</td>
-            <td>Acciones</td>
-        </tr>
+    <!--TITULO DE LOS DIVS  -->
+    <div class="pri">
+        <div class="sec">Registrar Nuevo Proveedor</div>
+        <div class="ter">Lista de Proveedor</div>
+    </div>
+    <!-- FIN DEL DIV -->
 
-        <?php
+    <!--DIV DE REGISTRO Y LISTA DE PROVEEDORES  -->
+    <div class="cont">
+        <!-- DIV DE REGISTRO DE PROVEEDORES -->
+        <div class="nuevoProveedor">
+            <form action="sp_anadirProveedor.php" method="post">
 
-        include 'conexion1.php';
-        $sql = "SELECT * FROM registro_proveedores";
-        $result = mysqli_query($conexion, $sql);
+                <label>Proveedor</label><br>
+                <input type="text" name="proveedor" id="proveedor"><br>
 
-        while ($mostrar = mysqli_fetch_array($result)) {
+                <label>Contacto</label><br>
+                <input type="text" name="contacto" id="contacto"><br>
 
-        ?>
+                <label>Celular</label><br>
+                <input type="text" name="celular" id="celular"><br>
 
-            <tr class="tabla2">
+                <label>Direccion</label><br>
+                <input type="text" name="direccion" id="direccion"><br>
 
-                <td><?php echo $mostrar['proveedor'] ?></td>
-                <td><?php echo $mostrar['contacto'] ?></td>
-                <td><?php echo $mostrar['celular'] ?></td>
-                <td><?php echo $mostrar['direccion'] ?></td>
-                <td><?php echo $mostrar['fecha']?></td>
+                <label>Fecha</label><br>
+                <input type="datetime-local" name="fecha" id="fecha"><br>
 
-                <td><a href="editarProveedor.php?
+                <input type="submit" value="Registrar Proveedor" name="insertar" class="btn"></td>
+
+            </form>
+        </div>
+        <!-- FIN DEL DIV DE REGISTRO DE PROVEEDORES -->
+
+        <!-- LISTA DE PROVEEDORES -->
+        <div class="proveedor">
+            <!-- TABLA DE LA LISTA DE PROVEEDORES -->
+            <table>
+                <tr>
+                    <td>Proveedor</td>
+                    <td>Contacto</td>
+                    <td>Celular</td>
+                    <td>Direccion</td>
+                    <td>Fecha</td>
+                    <td>Acciones</td>
+                </tr>
+
+                <?php
+
+                include 'conexion1.php';
+                $sql = "SELECT * FROM registro_proveedores";
+                $result = mysqli_query($conexion, $sql);
+
+                while ($mostrar = mysqli_fetch_array($result)) {
+
+                ?>
+
+                    <tr class="tabla2">
+
+                        <td><?php echo $mostrar['proveedor'] ?></td>
+                        <td><?php echo $mostrar['contacto'] ?></td>
+                        <td><?php echo $mostrar['celular'] ?></td>
+                        <td><?php echo $mostrar['direccion'] ?></td>
+                        <td><?php echo $mostrar['fecha'] ?></td>
+
+                        <td style="display: flex;flex-direction:row;"><a href="editarProveedor.php?
                      idproveedor=<?php echo $mostrar['idproveedor'] ?>&
                      proveedor=<?php echo $mostrar['proveedor'] ?>&
                      contacto=<?php echo $mostrar['contacto'] ?>&
                      celular=<?php echo $mostrar['celular'] ?>&
                      direccion=<?php echo $mostrar['direccion'] ?>&
-                     fecha=<?php echo $mostrar['fecha'] ?>&
+                     fecha=<?php echo $mostrar['fecha'] ?> &
         
                      " class="editar"><i class="fa-solid fa-pen"></i> Editar</a>
 
-                    <a href="eliminarProveedor.php? idproveedor=<?php echo $mostrar['idproveedor'] ?>" class="eliminar"><i class="fa-solid fa-trash"></i> Eliminar</a>
-                </td>
+                            <a href="eliminarProveedor.php? idproveedor=<?php echo $mostrar['idproveedor'] ?>" class="eliminar"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                        </td>
 
-            </tr>
+                    </tr>
 
-        <?php
-        }
-        ?>
+                <?php
+                }
+                ?>
 
-    </table>
+            </table>
+            <!-- FIN DE LA TABLA DE PROVEEDORES -->
+        </div>
+        <!-- FIN DE LA LISTA DE PROVEEDORES  -->
+    </div>
+    <!-- FIN DEL DIV DE REGISTRO Y LISTA DE PROVEEDORES  -->
 
+    <!-- FOOTER -->
     <footer>
         <h3>Frutitec. Telefono 0426-8317573</h3>
         <strong>
             <p>&copy; Copyright 2024 - Todos los derechos reservados
         </strong>
     </footer>
-
-    <!-- <div class="seccion">
-        Nombre<input type="text">
-        Producto<input type="text">
-    </div>
-
-    <div class="seccion2">
-        Cantidad<input type="age">
-        Fecha<input type="datetime-local">
-    </div> -->
-
+    <!-- FIN DEL FOOTER -->
 
 </body>
 

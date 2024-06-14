@@ -36,35 +36,25 @@
         </nav>
     </header>
 
-    <div>
-        <h2><i class="fa-solid fa-pencil"></i> Tomar Orden</h2>
-        <div>
-            <form>
-                <label>Numero de Mesa</label>
-                <select type="text" name="tipo" id="">
-                    <option disabled selected>Seleccionar</option>
-                    <option value="mesa1">Mesa1</option>
-                    <option value="mesa2">Mesa2</option>
-                    <option value="mesa3">Mesa3</option>
-                </select>
-
-                <label>Pedido</label>
-                <textarea></textarea><br>
-
-                <label>Metodo de Pago</label><br>
-                <select type="text" name="metodo" id="metodo">
-                    <option disabled selected>Seleccionar</option>
-                    <option value="Efectivo"></option>
-                    <option value="Punto de Venta"></option>
-                    <option value="Bio-Pago"></option>
-                </select><br>
-
-                <label>Monto</label>
-                <input type="text" name="monto" id="monto">
-
-            </form>
-        </div>
+    <div class="icon">
+        <div class="icon2"><i class="fa-solid fa-utensils"></i> Realizar Orden</div>
     </div>
+
+    <div class="cont">
+        <div class="ordenes">Mesa #1<br><a href="../PHP/mesa1.php">Ocupar</a></div>
+        <div class="ordenes">Mesa #2<br><a href="../PHP/mesa2.php">Ocupar</a></div>
+        <div class="ordenes">Mesa #3<br><a href="../PHP/mesa3.php">Ocupar</a></div>
+        <div class="ordenes">Para llevar<br><a href="../PHP/llevar.php">Ordenar</a></div>
+    </div>
+
+      <!-- FOOTER -->
+      <footer>
+        <h3>Frutitec. Telefono 0426-8317573</h3>
+        <strong>
+            <p>&copy; Copyright 2024 - Todos los derechos reservados
+        </strong>
+    </footer>
+    <!-- FIN DEL FOOTER -->
 
 </body>
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/editarProducto.css">
     <link rel="icon" href="../images/Logo.ico">
-    <title>Editar Proveedor</title>
+    <title>Editar Producto</title>
 </head>
 
 <body>
@@ -15,6 +15,7 @@
     $tipo = $_GET['tipo'];
     $nombre = $_GET['nombre'];
     $descripcion = $_GET['descripcion'];
+    $precio = $_GET['precio'];
 
     ?>
 
@@ -32,6 +33,7 @@
                             <option disabled selected>Seleccionar</option>
                             <option>Bebida</option>
                             <option>Alimento</option>
+                        </select>
                     </td>
                 </tr>
 
@@ -43,6 +45,11 @@
                 <tr>
                     <td>Descripcion</td>
                     <td><input type="text" name="descripcion" id="" value="<?= $descripcion ?>"></td>
+                </tr>
+
+                <tr>
+                    <td>Precio</td>
+                    <td><input type="text" name="precio" id="" value="<?= $precio ?>"></td>
                 </tr>
 
                 <tr>
