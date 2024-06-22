@@ -4,8 +4,8 @@
     --fondosNaranjas:rgb(236, 135, 3);
     --light-color: #ffff;
 
-    --menu: Poppins-bold;
-    --titulo: lobster;
+    --menu: WorkSans;
+    --titulo: figtree;
 }
 
 body{
@@ -16,13 +16,13 @@ body{
 }    
 
 @font-face {
-    font-family: lobster;
-    src: url('.assets/fonts/Lobster-Regular.ttf');
+    font-family: figtree;
+    src: url('.assets/fonts/Figtree-Regular.ttf');
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url('./assets/fonts/Poppins-Bold.ttf');
+    font-family: WorkSans;
+    src: url('./assets/fonts/WorkSans-SemiBold.ttf');
 }
 
 /* Fin configuracion */
@@ -100,41 +100,64 @@ nav ul li a:hover{
 .orden{
     width: auto;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.agr_pedido{
-    width: auto;
+form{
     display: flex;
+    font-family: var(--menu);
+    font-size: 25px;
+    margin: 25px auto 0px auto;
 }
 
-.agr_pedido form input{
-    width: 100%;
-    margin-top: 40px;
+ form label{
+    margin: 0px 20px 0px 10px;
     padding: 6px 10px 6px 10px;
-}
-
-.agr_pedido form input{
-    border: 3px solid #3652AD;
     font-size: 20px;
 }
 
-.agr_pedido form input:focus{
+form select{
+    margin: 0px 130px 0px 10px;    
+    border-radius:3px ;
+}
+
+ form input:focus{
     filter:drop-shadow(5px 3px 5px #3652AD);
 }
 
-.agr_pedido2{
-    width: auto;
-    margin: 50px auto 0px auto;
+form select:focus{
+    border:3px solid #3652AD;
+}
+
+.boton{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    border: 3px solid #3652AD;
+    border-radius: 4px;
+    width: 150px;
+    font-size: 20px;
+    padding: 5px;
 }
 
 table {
+    margin: 30px 0px 0px 0px;
     font-size: 20px;
     font-family: var(--menu);
     border: 3px solid #280274;
+    width: 100%;
 }
+
+
+tr{
+    text-align: center;
+}
+
 
 td {
     padding: 0px 50px 0px 50px;
@@ -154,7 +177,7 @@ td {
     background: red;
     border-radius: 3px;
     font-family: var(--menu);
-}
+}  
 
 footer{
     background: var(--fondosNaranjas);
@@ -164,4 +187,9 @@ footer{
     position:absolute;
 } 
 
-
+/* .cantidad{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+} */

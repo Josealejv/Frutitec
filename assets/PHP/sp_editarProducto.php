@@ -5,7 +5,6 @@
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
     $insertar = $_POST['insertar'];
-
     if (isset($insertar)) 
       {
      include 'conexion1.php';

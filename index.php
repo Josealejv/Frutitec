@@ -18,8 +18,12 @@
     <div class="Formulario">
 
         <h2>Inicio de Sesion</h2>
+        <?php
+        include("./assets/PHP/conexion1.php");
+        include("./assets/PHP/controlador.php");
+        ?>
 
-        <form action="validar.php" method="post">
+        <form action="assets/PHP/loguear.php" method="post">
 
             <div class="correo">
 
@@ -30,7 +34,7 @@
 
             <div class="Clave">
 
-                <input type="password" id="contrasena" name="clave" >
+                <input type="password" id="clave" name="clave" >
                 <label for="contrasena">Contraseña:</label>
 
             </div>
@@ -39,10 +43,6 @@
 
         </form>
 
-    </div>
-
-    <div class="nuevoUsuario">
-        <a href="./assets/PHP/nuevoUsuario.php">Crear Nuevo Usuario</a>
     </div>
 
 </body>

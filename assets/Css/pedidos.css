@@ -4,8 +4,8 @@
     --fondosNaranjas:rgb(236, 135, 3);
     --light-color: #ffff;
 
-    --menu: Poppins-bold;
-    --titulo: lobster;
+    --menu: WorkSans;
+    --titulo: figtree;
 }
 
 body{
@@ -16,13 +16,13 @@ body{
 }    
 
 @font-face {
-    font-family: lobster;
-    src: url('.assets/fonts/Lobster-Regular.ttf');
+    font-family: figtree;
+    src: url('.assets/fonts/Figtree-Regular.ttf');
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url('./assets/fonts/Poppins-Bold.ttf');
+    font-family: WorkSans;
+    src: url('./assets/fonts/WorkSans-SemiBold.ttf');
 }
 
 /* Fin configuracion */
@@ -123,6 +123,4 @@ footer{
     text-align: center;
     margin-top: 350px;
     position:absolute;
-} 
-
-
+}

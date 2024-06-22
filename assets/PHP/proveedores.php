@@ -36,78 +36,67 @@
     </header>
     <!-- FIN DEL MENU DE NAVEGACION -->
 
-    <!-- TITULO DE LA PAGINA -->
-    <div class="container">
-        <div class="proveedores"><i class="fa-solid fa-truck"></i> Lista de Proveedores</div>
-    </div>
-    <!-- FIN  -->
+    <div class="icon">
+        <div class="icon2"><i class="fa-solid fa-truck"></i> Lista de Proveedores</div>
+        <div class="btnAnadir"><button onclick="openModal2()">Añadir Proveedor</button></div>
 
-    <!--TITULO DE LOS DIVS  -->
-    <div class="pri">
-        <div class="sec">Registrar Nuevo Proveedor</div>
-        <div class="ter">Lista de Proveedor</div>
-    </div>
-    <!-- FIN DEL DIV -->
-
-    <!--DIV DE REGISTRO Y LISTA DE PROVEEDORES  -->
-    <div class="cont">
-        <!-- DIV DE REGISTRO DE PROVEEDORES -->
-        <div class="nuevoProveedor">
+        <dialog class="modal" id="proveedoresModal">
             <form action="sp_anadirProveedor.php" method="post">
 
+                <h2>Añadir Proveedor</h2>
+
                 <label>Proveedor</label><br>
-                <input type="text" name="proveedor" id="proveedor"><br>
+                <input type="text" name="proveedor" id="proveedor" required="" pattern="[a-zA-Z\s]+"><br>
 
                 <label>Contacto</label><br>
-                <input type="text" name="contacto" id="contacto"><br>
+                <input type="text" name="contacto" id="contacto" required="" pattern="[a-zA-Z\s]+"><br>
 
                 <label>Celular</label><br>
-                <input type="text" name="celular" id="celular"><br>
+                <input type="text" name="celular" id="celular" required="" pattern="^\d+(-\d+)?$"><br>
 
                 <label>Direccion</label><br>
-                <input type="text" name="direccion" id="direccion"><br>
+                <input type="text" name="direccion" id="direccion" required="" pattern="[a-zA-Z\s]+"><br>
 
                 <label>Fecha</label><br>
                 <input type="datetime-local" name="fecha" id="fecha"><br>
 
                 <input type="submit" value="Registrar Proveedor" name="insertar" class="btn"></td>
+                <input onclick="closeModal2()" class="btn2" value="Cerrar Registro de Proveedores">
 
             </form>
-        </div>
-        <!-- FIN DEL DIV DE REGISTRO DE PROVEEDORES -->
+        </dialog>
+    </div>
 
-        <!-- LISTA DE PROVEEDORES -->
-        <div class="proveedor">
-            <!-- TABLA DE LA LISTA DE PROVEEDORES -->
-            <table>
-                <tr>
-                    <td>Proveedor</td>
-                    <td>Contacto</td>
-                    <td>Celular</td>
-                    <td>Direccion</td>
-                    <td>Fecha</td>
-                    <td>Acciones</td>
-                </tr>
+    <!-- TABLA DE PRODUCTOS -->
+    <table>
+        <tr>
+            <td>Proveedor</td>
+            <td>Contacto</td>
+            <td>Celular</td>
+            <td>Direccion</td>
+            <td>Fecha</td>
+            <td>Acciones</td>
+        </tr>
 
-                <?php
+        <?php
 
-                include 'conexion1.php';
-                $sql = "SELECT * FROM registro_proveedores";
-                $result = mysqli_query($conexion, $sql);
+        include 'conexion1.php';
+        $sql = "SELECT * FROM registro_proveedores";
+        $result = mysqli_query($conexion, $sql);
 
-                while ($mostrar = mysqli_fetch_array($result)) {
+        while ($mostrar = mysqli_fetch_array($result)) {
 
-                ?>
+        ?>
 
-                    <tr class="tabla2">
+            <tr class="tabla2">
 
-                        <td><?php echo $mostrar['proveedor'] ?></td>
-                        <td><?php echo $mostrar['contacto'] ?></td>
-                        <td><?php echo $mostrar['celular'] ?></td>
-                        <td><?php echo $mostrar['direccion'] ?></td>
-                        <td><?php echo $mostrar['fecha'] ?></td>
+                <td><?php echo $mostrar['proveedor'] ?></td>
+                <td><?php echo $mostrar['contacto'] ?></td>
+                <td><?php echo $mostrar['celular'] ?></td>
+                <td><?php echo $mostrar['direccion'] ?></td>
+                <td><?php echo $mostrar['fecha'] ?></td>
 
-                        <td style="display: flex;flex-direction:row;"><a href="editarProveedor.php?
+                <td><a href="editarProveedor.php?
                      idproveedor=<?php echo $mostrar['idproveedor'] ?>&
                      proveedor=<?php echo $mostrar['proveedor'] ?>&
                      contacto=<?php echo $mostrar['contacto'] ?>&
@@ -117,21 +106,17 @@
         
                      " class="editar"><i class="fa-solid fa-pen"></i> Editar</a>
 
-                            <a href="eliminarProveedor.php? idproveedor=<?php echo $mostrar['idproveedor'] ?>" class="eliminar"><i class="fa-solid fa-trash"></i> Eliminar</a>
-                        </td>
+                    <a href="eliminarProveedor.php? idproveedor=<?php echo $mostrar['idproveedor'] ?>" class="eliminar" onclick='return confirmacion2()'><i class="fa-solid fa-trash"></i> Eliminar</a>
+                </td>
 
-                    </tr>
+            </tr>
 
-                <?php
-                }
-                ?>
+        <?php
+        }
+        ?>
 
-            </table>
-            <!-- FIN DE LA TABLA DE PROVEEDORES -->
-        </div>
-        <!-- FIN DE LA LISTA DE PROVEEDORES  -->
-    </div>
-    <!-- FIN DEL DIV DE REGISTRO Y LISTA DE PROVEEDORES  -->
+    </table>
+
 
     <!-- FOOTER -->
     <footer>
@@ -141,6 +126,8 @@
         </strong>
     </footer>
     <!-- FIN DEL FOOTER -->
+
+    <script src="../js/index.js"></script>
 
 </body>
 

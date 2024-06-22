@@ -36,59 +36,55 @@
         </nav>
     </header>
 
-    <div class="container">
-        <div class="cliente"><i class="fa-solid fa-user"></i> Clientes</div>
-    </div>
+    <div class="icon">
+        <div class="icon2"> <i class="fa-solid fa-user"></i> Clientes </div>
+        <div class="btnAnadir"><button onclick="openModal3()">Añadir Cliente</button></div>
+        <dialog class="modal" id="clientesModal">
 
-    <div class="pri">
-        <div class="sec">Registrar Nuevo Cliente</div>
-        <div class="ter">Lista de Clientes</div>
-    </div>
-
-    <div class="cont">
-        <div class="nuevoCliente">
             <form action="sp_anadirCliente.php" method="post">
 
+                <h2>Añadir Clientes</h2>
+
                 <label>Nombre</label><br>
-                <input type="text" name="nombre" id="nombre"><br>
+                <input type="text" name="nombre" id="nombre" minlength="5" maxlength="50" required=""  pattern="[a-zA-Z\s]+"><br>
 
                 <label>Correo</label><br>
-                <input type="text" name="correo" id="correo"><br>
+                <input type="text" name="correo" id="correo" minlength="2" maxlength="40" required=""><br>
 
                 <label>Celular</label><br>
-                <input type="text" name="celular" id="celular"><br>
+                <input type="text" name="celular" id="celular" minlength="2" maxlength="15" required="" pattern="^\d+(-\d+)?$"><br>
 
                 <input type="submit" value="Registrar Cliente" name="insertar" class="btn">
-
+                <input onclick="closeModal3()" class="btn2" value="Cerrar Registro de Clientes">
             </form>
-        </div>
+        </dialog>
+    </div> 
 
-        <div class="clientes">
-            <table>
-                <tr>
-                    <td>Nombre del Cliente</td>
-                    <td>Email</td>
-                    <td>Celular</td>
-                    <td>Acciones</td>
-                </tr>
+    <table>
+        <tr>
+            <td>Nombre del Cliente</td>
+            <td>Email</td>
+            <td>Celular</td>
+            <td>Acciones</td>
+        </tr>
 
-                <?php
+        <?php
 
-                include 'conexion1.php';
-                $sql = "SELECT * FROM registro_clientes";
-                $result = mysqli_query($conexion, $sql);
+        include 'conexion1.php';
+        $sql = "SELECT * FROM registro_clientes";
+        $result = mysqli_query($conexion, $sql);
 
-                while ($mostrar = mysqli_fetch_array($result)) {
+        while ($mostrar = mysqli_fetch_array($result)) {
 
-                ?>
+        ?>
 
-                    <tr class="tabla2">
+            <tr class="tabla2">
 
-                        <td><?php echo $mostrar['nombre'] ?></td>
-                        <td><?php echo $mostrar['correo'] ?></td>
-                        <td><?php echo $mostrar['celular'] ?></td>
+                <td><?php echo $mostrar['nombre'] ?></td>
+                <td><?php echo $mostrar['correo'] ?></td>
+                <td><?php echo $mostrar['celular'] ?></td>
 
-                        <td><a href="editarCliente.php?
+                <td><a href="editarCliente.php?
                      idcliente=<?php echo $mostrar['idcliente'] ?>&
                      nombre=<?php echo $mostrar['nombre'] ?>&
                      correo=<?php echo $mostrar['correo'] ?>&
@@ -96,17 +92,17 @@
         
                      " class="editar"><i class="fa-solid fa-pen"></i> Editar</a>
 
-                            <a href="eliminarCliente.php? idcliente=<?php echo $mostrar['idcliente'] ?>" class="eliminar"><i class="fa-solid fa-trash"></i> Eliminar</a>
-                        </td>
+                    <a href="eliminarCliente.php? idcliente=<?php echo $mostrar['idcliente'] ?>" class="eliminar" onclick='return confirmacion3()'><i class="fa-solid fa-trash"></i> Eliminar</a>
+                </td>
 
-                    </tr>
+            </tr>
 
-                <?php
-                }
-                ?>
+        <?php
+        }
+        ?>
 
-            </table>
-        </div>
+    </table>
+    </div>
     </div>
 
     <footer>
@@ -115,6 +111,8 @@
             <p>&copy; Copyright 2024 - Todos los derechos reservados
         </strong>
     </footer>
+
+    <script src="../js/index.js"></script>
 
 </body>
 

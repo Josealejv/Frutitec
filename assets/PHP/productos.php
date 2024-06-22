@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Css/productos.css">
     <link rel="icon" href="../images/Logo.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Productos</title>
 </head>
 
@@ -36,36 +37,42 @@
     </header>
     <!-- FIN DEL MENU DE NAVEGACION -->
 
+    <!-- Titulo y boton para añadir -->
+
     <div class="icon">
         <div class="icon2"><i class="fa-brands fa-product-hunt"></i> Lista de Productos</div>
         <div class="btnAnadir"><button onclick="openModal()">Añadir Producto</button></div>
+     <!-- Fin del titulo y boton de añanir -->
+
+        <!-- MODAL PARA AÑADIR  -->
         <dialog class="modal" id="productosModal">
             <form action="sp_anadirProducto.php" method="post">
 
                 <h2>Añadir Productos</h2>
 
                 <label>Tipo</label><br>
-                <select type="text" name="tipo" id="tipo">
+                <select  name="tipo" id="tipo">
                     <option disabled selected>Seleccionar</option>
-                    <option>Jugo</option>
-                    <option>Refresco</option>
-                    <option>Alimento</option>
+                    <option name="jugo" id="jugo">Jugo</option>
+                    <option  name="refresco" id="refresco">Refresco</option>
+                    <option  name="alimento" id="jugo">Alimento</option>
                 </select><br>
 
                 <label>Nombre</label><br>
-                <input type="text" name="nombre" id="nombre"><br>
+                <input minlength="5" maxlength="50" type="text" name="nombre" id="nombre" required="" pattern="[a-zA-Z\s]+"><br>
 
                 <label>Descripcion</label><br>
-                <input type="text" name="descripcion" id="descripcion"><br>
+                <input minlength="4" maxlength="20" type="text" name="descripcion" id="descripcion" required="" pattern="[a-zA-Z\s]+"><br>
 
                 <label>Precio</label><br>
-                <input type="text" name="precio" id="precio"><br>
+                <input minlength="2" maxlength="10" type="text" name="precio" id="precio" required="" pattern="^\d+(,\d+)?$"><br>
 
                 <input type="submit" value="Registrar Producto" name="insertar" class="btn">
                 <input onclick="closeModal()" class="btn2" value="Cerrar Registro de Producto">
 
             </form>
         </dialog>
+        <!-- FIN DEL MODAL -->
     </div>
 
     <!-- TABLA DE PRODUCTOS -->
@@ -93,18 +100,11 @@
                 <td><?php echo $mostrar['tipo'] ?></td>
                 <td><?php echo $mostrar['nombre'] ?></td>
                 <td><?php echo $mostrar['descripcion'] ?></td>
-                <td><?php echo $mostrar['precio'] ?></td>
+                <td><?php echo $mostrar['precio']?> Bs</td>
 
-                <td><a href="editarProducto.php?
-                     idproducto<?php echo $mostrar['idproducto'] ?>&
-                     tipo=<?php echo $mostrar['tipo'] ?>&
-                     nombre=<?php echo $mostrar['nombre'] ?>&
-                     descripcion=<?php echo $mostrar['descripcion'] ?>&
-                     precio=<?php echo $mostrar['precio'] ?>&
-        
-                     " class="editar"><i class="fa-solid fa-pen"></i> Editar</a>
+                <td><a href="editarProducto.php?idproducto=<?php echo $mostrar['idproducto']; ?>" class="editar"><i class="fa-solid fa-pen"></i> Editar</a>
 
-                    <a href="eliminar.php? idproducto=<?php echo $mostrar['idproducto'] ?>" class="eliminar"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                    <a href="eliminar.php? idproducto=<?php echo $mostrar['idproducto'] ?>" class="eliminar" onclick='return confirmacion()'><i class="fa-solid fa-trash"></i> Eliminar</a>
                 </td>
 
             </tr>
@@ -114,6 +114,8 @@
         ?>
 
     </table>
+
+    <!-- FIN DE LA TABLA -->
 
     <!-- FOOTER -->
     <footer>
@@ -125,6 +127,7 @@
     <!-- FIN DEL FOOTER -->
 
     <script src="../js/index.js"></script>
+    
 
 </body>
 

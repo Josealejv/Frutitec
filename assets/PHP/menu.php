@@ -1,3 +1,18 @@
+<?PHP  
+
+session_start();
+$usuario = $_SESSION['username'];
+
+if(!isset($usuario)){
+    header("location: index.php");
+}
+else{
+    echo "<CENTER><h1>Bienvenido $usuario </h1></CENTER>";
+
+   
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +50,7 @@
                 <li><a href="../PHP/ventas.php"><i class="fa-solid fa-dollar-sign"></i> Ventas</a></li>
 
                 <li><a href="../PHP/clientes.php"><i class="fa-solid fa-user"></i> Clientes </a></li>
+                <li><?php  echo "<a href='salir.php'>Salir</a>"; }?></li>
             </ul>
 
 
@@ -44,9 +60,14 @@
 
     <img src="../images/Foto2.jpg" class="foto">
 
-
-   
-
+    <!-- FOOTER -->
+    <footer>
+        <h3>Frutitec. Telefono 0426-8317573</h3>
+        <strong>
+            <p>&copy; Copyright 2024 - Todos los derechos reservados
+        </strong>
+    </footer>
+    <!-- FIN DEL FOOTER -->
 
 
 </body>

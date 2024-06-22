@@ -1,13 +1,20 @@
+<?php
+
+include 'conexion1.php';
+$query = mysqli_query($conexion, "SELECT idpedidos,nombre From tipos ");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Css/pedidos.css">
+    <link rel="stylesheet" href="../Css/mesa1.css">
     <link rel="icon" href="../images/Logo.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Pedidos</title>
+    <title>Mesa#1</title>
 </head>
 
 <body>
@@ -37,18 +44,75 @@
     </header>
 
     <div class="icon">
-        <div class="icon2"><i class="fa-solid fa-utensils"></i> Realizar Orden</div>
+        <div class="icon2"><i class="fa-solid fa-utensils"></i> Realizar Pedido</div>
     </div>
 
-    <div class="cont">
-        <div class="ordenes">Mesa #1<br><a href="../PHP/mesa1.php">Ocupar</a></div>
-        <div class="ordenes">Mesa #2<br><a href="../PHP/mesa2.php">Ocupar</a></div>
-        <div class="ordenes">Mesa #3<br><a href="../PHP/mesa3.php">Ocupar</a></div>
-        <div class="ordenes">Para llevar<br><a href="../PHP/llevar.php">Ordenar</a></div>
+    <div class="orden">
+
+        <form action="pedidos.php" method="post">
+
+            <label>Tipo De Producto </label>
+            <select name="tipos">
+                <option disabled selected>Seleccionar</option>
+                <?php
+                while ($datos = mysqli_fetch_array($query)) {
+                ?>
+                    <option value="<?php echo $datos['nombre'] ?>"><?php echo $datos['nombre'] ?></option>
+                <?php } ?>
+
+            </select>
+
+            <label>Cantidad</label>
+            <select name="cantidad">
+                <option disabled selected>Seleccionar</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
     </div>
 
-      <!-- FOOTER -->
-      <footer>
+    <div class="boton"><input type="submit" value="Pedir" name="insertar" class="btn"></div>
+
+    </form>
+
+    <table>
+
+        <tr>
+            <td>Producto</td>
+            <td>Cantidad</td>
+            <td>Precio</td>
+            <td>SubTotal</td>
+            <td>Id Compra</td>
+        </tr>
+
+        <tr class="tabla2">
+
+            <td><?php if (isset($_POST['tipos'])) {
+                    $tipos = $_POST['tipos'];
+                    echo $tipos;
+                } ?>
+            </td>
+            
+            <td><?php echo $cantidad['cantidad'] ?></td>
+
+            <td <?php echo $mostrar[''] ?>></td>
+            <td><?php echo $mostrar[''] ?></td>
+
+            <td></td>
+
+        </tr>
+    </table>
+
+
+    <!-- FOOTER -->
+    <footer>
         <h3>Frutitec. Telefono 0426-8317573</h3>
         <strong>
             <p>&copy; Copyright 2024 - Todos los derechos reservados
@@ -56,6 +120,7 @@
     </footer>
     <!-- FIN DEL FOOTER -->
 
+    <script src="../js/index.js"></script>
 </body>
 
 </html>

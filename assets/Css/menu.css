@@ -122,3 +122,11 @@ nav ul li a:hover {
     background: rgb(184, 103, 11);
 }
 
+footer {
+    background: var(--fondosNaranjas);
+    width: 100%;
+   margin-top: -100px;
+    text-align: center;
+    margin-top: 50px;
+    position:absolute;
+}

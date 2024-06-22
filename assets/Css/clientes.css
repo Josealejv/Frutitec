@@ -4,8 +4,8 @@
     --fondosNaranjas: rgb(236, 135, 3);
     --light-color: #ffff;
 
-    --menu: Poppins-bold;
-    --titulo: lobster;
+    --menu: WorkSans;
+    --titulo: figtree;
 }
 
 body {
@@ -16,15 +16,14 @@ body {
 }
 
 @font-face {
-    font-family: lobster;
-    src: url('.assets/fonts/Lobster-Regular.ttf');
+    font-family: figtree;
+    src: url('.assets/fonts/Figtree-Regular.ttf');
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url('./assets/fonts/Poppins-Bold.ttf');
+    font-family: WorkSans;
+    src: url('./assets/fonts/WorkSans-SemiBold.ttf');
 }
-
 
 /*Header*/
 
@@ -81,58 +80,64 @@ nav ul li a:hover {
 
 }
 
-.container {
+.icon{
     display: flex;
-    margin-top: 20px;
-    justify-content: center;
+    margin: 25px 0px 0px 12px;
+    justify-content: space-between;
     align-items: center;
-
 }
 
-.cliente {
+.icon2, .btnAnadir{
     font-size: 40px;
     font-family: var(--titulo);
 }
 
-.pri {
-    display: flex;
-    justify-content: space-around;
-    margin: 50px auto 0px auto;
-    width: 90%;
-    border: 2px solid var(--fondosNaranjas);
-    font-family: var(--menu);
-    font-size: 20px;
-    padding: 5px;
+button{
+    margin-right: 12px;
+    font-size: 25px;
+    font-family: var(--titulo);
+    background: rgb(19, 164, 46);
     color: var(--light-color);
-    background: #3652AD;
-    border-radius: 5px;
+    border:none;
+    border-radius: 3px;
 }
 
-.cont {
-    display: flex;
-    justify-content: space-between;
-}
-
-.nuevoCliente {
-    font-size: 20px;
-    font-family: var(--menu);
-    margin: 50px 50px 0px 100px;
-    width: auto;
-}
-
-.nuevoCliente input {
+form input{
     margin-top: 20px;
     margin-bottom: 20px;
     border: none;
     padding: 5px;
 }
 
-.nuevoCliente input:hover {
+form input:hover{
     border: 3px solid #3652AD;
     border-radius: 3px;
 }
 
-.nuevoCliente input:focus {
+form input:hover{
+    border: 3px solid #3652AD;
+    border-radius: 3px;
+}
+
+ form input:focus{
+    border: 3px solid #3652AD;
+    border-radius: 3px;
+    outline: none;
+}
+
+form input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 5px;
+}
+
+form input:hover {
+    border: 3px solid #3652AD;
+    border-radius: 3px;
+}
+
+form input:focus {
     border: 3px solid #3652AD;
     border-radius: 3px;
     outline: none;
@@ -145,50 +150,79 @@ nav ul li a:hover {
     padding: 3px;
 }
 
-.clientes {
+.btn2{
+    background: rgb(19, 164, 46);
+    color: var(--light-color);
+    cursor: pointer;
+    padding: 3px;
+    margin-top: 4px;
     width: auto;
-    margin: 35px 80px 0px 140px;
 }
 
-table {
+ .btn2:hover{
+    border: 3px solid rgb(19, 164, 46);
+    border-radius: 3px;
+}
+
+ .btn2:focus{
+    border: 3px solid rgb(19, 164, 46);
+    border-radius: 3px;
+    outline: none;
+}
+
+table{
+    margin: 25px 0px 0px 0px;
     font-size: 20px;
     font-family: var(--menu);
-    border: 3px solid #280274;
+    border: 3px solid #3b6fc3;
+    width: 100%;
 }
 
-td {
+tr{
+    text-align: center;
+}
+
+td{
     padding: 0px 50px 0px 50px;
     border-right: 2px solid var(--fondosNaranjas);
 }
 
-.tabla2 td {
+.tabla2 td{
     border-top: 2px solid var(--fondosNaranjas);
     padding: 5px;
     text-align: center;
 }
 
-.eliminar {
+.eliminar{
     text-decoration: none;
     padding: 2px;
     color: white;
     background: red;
     border-radius: 3px;
     font-family: var(--menu);
+    width: auto;
+    height: auto;
 }
 
-.editar {
+.editar{
     text-decoration: none;
-    padding: 2px 5px 2px 5px;
+    padding: 2px;
     color: white;
     background: green;
     border-radius: 3px;
     font-family: var(--menu);
+    width: auto;
+    height: auto;
 }
 
-footer {
+footer{
     background: var(--fondosNaranjas);
     width: 100%;
     text-align: center;
-    margin-top: 50px;
-    position: absolute;
+    margin-top: 40px;
+    position:absolute;
+} 
+
+.modal::backdrop{
+    background: rgba(0,0,0, 0.5);
 }

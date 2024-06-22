@@ -6,11 +6,25 @@ if (!empty($_POST["ingresar"])) {
     } else {
         $usuario = $_POST["usuario"];
         $clave = $_POST["clave"];
-        $sql = $conexion->query("select * from iniciosesion where usuario='$usuario' and clave='$clave'");
-        if ($datos = $sql->fetch_objetc()) {
-            header("location:menu.php");
+
+        // Preparar la consulta
+        $stmt = $conexion->prepare("SELECT * FROM iniciosesion WHERE usuario ='$usuario' AND clave ='$clave'");
+        $stmt->bind_param("ss", $usuario, $clave);
+        $stmt->execute();
+
+        // Verificar si la consulta se ejecutó correctamente
+        if ($stmt->errno) {
+            echo "Error al ejecutar la consulta: " . $stmt->error;
         } else {
-            echo "ACCESO DENEGADO";
+            // Almacenar el resultado de la consulta
+            $result = $stmt->get_result();
+            $row = $result->fetch_object();
+
+            if ($row) {
+                header("location:menu.php");
+            } else {
+                echo "ACCESO DENEGADO";
+            }
         }
     }
 }

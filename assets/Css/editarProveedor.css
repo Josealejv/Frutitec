@@ -25,28 +25,110 @@ body{
     src: url('./assets/fonts/Poppins-Bold.ttf');
 }
 
-
 /*Header*/
 
-form{
-    margin: 80px 550px 0px 550px;
+header {
+    background: var(--fondosNaranjas);
+    text-align: center;
+    font-size: 50px;
+    width: auto;
+}
+
+.nav {
+    font-size: 25px;
+}
+
+.logo-nav {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: -35px;
+    position: relative;
+}
+
+h4 {
+    color: var(--light-color);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+    width: 1350px;
+    height: 55px;
     font-family: var(--menu);
 }
 
-table{
-    border-radius: 5px;
-    border: 3px solid #333A73;
-    padding: 20px;
+nav ul li {
+    margin: 5px;
+    margin-left: 45px;
 }
 
+nav ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    color: black;
+    transition: 1s;
+
+}
+
+@media(max-width:800px) {
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .foto {
+        padding-top: 30px;
+        height: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 96%;
+        height: auto;
+    }
+}
+
+/*Header*/
+
+.padre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+
+table{
+    border-radius: 5px;
+    border: 3px solid var(--fondosNaranjas);
+    padding: 20px;
+    font-family: var(--menu);
+    font-size: 20px;
+}
+
+th{
+    margin: 0px 50% 0px 50%;
+}
+
+
 td{
-    padding: 30px;
+    padding: 25px;
 }
 
 .actualizar{
     padding: 5px;
     border-radius: 3px;
-    background: #387ADF;
+    background: #3e38df;
     border: 2px solid var(--fondosNaranjas);
     cursor: pointer;
     font-size: 16px;
@@ -57,7 +139,15 @@ td{
    text-decoration: none; 
    padding: 5px;
    border-radius: 3px;
-   background: #50C4ED;
+   background: #4a6fe0;
    color: var(--light-color);
-    border: 2px solid green;
+   border: 2px solid green;
+}
+
+footer {
+    background: var(--fondosNaranjas);
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    position: absolute;
 }

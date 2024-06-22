@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../Css/inventario.css">
     <link rel="icon" href="../images/Logo.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Clientes</title>
+    <title>Inventario</title>
 </head>
 
 <body>
@@ -36,46 +36,73 @@
         </nav>
     </header>
 
-    <div class="container">
-        <div class="inventario"><i class="fa-solid fa-clipboard"></i> Inventario</div>
-    </div>
+    <div class="icon">
+        <div class="icon2"><i class="fa-solid fa-clipboard"></i> Inventario</div>
+        <div class="btnAnadir"><button onclick="openModal4()">Añadir</button></div>
+        <dialog class="modal" id="inventarioModal">
+
+            <form action="sp_anadirInventario.php" method="post">
+
+                <h2>Añadir al Inventario</h2>
+
+                <label>Nombre</label><br>
+                <input type="text" name="nombreProducto" id="nombreProducto" minlength="5" maxlength="50" required=""  pattern="[a-zA-Z\s]+"><br>
+
+                <label>Costo</label><br>
+                <input type="text" name="costo" id="costo" minlength="2" maxlength="40" required="" pattern="^\d+(,\d+)?$"><br>
+
+                <label>Descripcion</label><br>
+                <input type="text" name="descripcion" id="descripcion" minlength="2" maxlength="15" required="" pattern="[a-zA-Z\s]+"><br>
+
+                <label>Cantidad</label><br>
+                <input type="text" name="cantidad" id="cantidad" minlength="2" maxlength="40" required="" pattern="^\d+(,\d+)?$"><br>
+
+                <input type="submit" value="Registrar Inventario" name="insertar" class="btn">
+                
+                <input onclick="closeModal4()" class="btn2" value="Cerrar Registro de Inventario">
+            </form>
+        </dialog>
+    </div> 
 
     <table>
-                <tr>
-                    <td>Nombre</td>
-                    <td>Cantidad</td>
-                    <td>Cantid</td>
-                    <td>SubTotal</td>
-                    <td>Quitar</td>
-                </tr>
+        <tr>
+            <td>Nombre Del Producto</td>
+            <td>Costo</td>
+            <td>Descripcion</td>
+            <td>Cantidad</td>
+            <td>Movimiento</td>
+            <td>Eliminar</td>
+        </tr>
 
-                <?php
+        <?php
 
-                include 'conexion1.php';
-                $sql = "SELECT * FROM registro_inventario";
-                $result = mysqli_query($conexion, $sql);
+        include 'conexion1.php';
+        $sql = "SELECT * FROM inventario";
+        $result = mysqli_query($conexion, $sql);
 
-                while ($mostrar = mysqli_fetch_array($result)) {
+        while ($mostrar = mysqli_fetch_array($result)) {
 
-                ?>
+        ?>
 
-                    <tr class="tabla2">
+            <tr class="tabla2">
 
-                        <td><?php echo $mostrar['nombreproducto'] ?></td>
-                        <td><?php echo $mostrar['precio'] ?></td>
-                        <td><input type="number"></td>
-                        <td></td>
+                <td><?php echo $mostrar['nombreProducto'] ?></td>
+                <td><?php echo $mostrar['costo'] ?>$</td>
+                <td><?php echo $mostrar['descripcion'] ?></td>
+                <td><?php echo $mostrar['cantidad'] ?>kg</td>
+                <td><a href="editarInventario.php? idProductoInventario=<?php echo $mostrar['idProductoInventario']; ?>" class="editar"><i class="fa-solid fa-pen"></i> Editar</a></td>
+                
 
-                        <td><a href="eliminarPedido.php? idpedido=<?php echo $mostrar['idpedido'] ?>" class="eliminar"><i class="fa-solid fa-trash"></i> Quitar</a>
-                        </td>
+                <td><a href="eliminarInventario.php? idProductoInventario=<?php echo $mostrar['idProductoInventario'] ?>" class="eliminar"><i class="fa-solid fa-trash"></i> Quitar</a>
+                </td>
 
-                    </tr>
+            </tr>
 
-                <?php
-                }
-                ?>
-            </table>
-    
+        <?php
+        }
+        ?>
+    </table>
+
 
     <footer>
         <h3>Frutitec. Telefono 0426-8317573</h3>
@@ -83,6 +110,8 @@
             <p>&copy; Copyright 2024 - Todos los derechos reservados
         </strong>
     </footer>
+
+    <script src="../js/index.js"></script>
 
 </body>
 

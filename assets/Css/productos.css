@@ -4,8 +4,8 @@
     --fondosNaranjas:rgb(236, 135, 3);
     --light-color: #ffff;
 
-    --menu: Poppins-bold;
-    --titulo: lobster;
+    --menu: WorkSans;
+    --titulo: figtree;
 }
 
 body{
@@ -16,13 +16,13 @@ body{
 }    
 
 @font-face {
-    font-family: lobster;
-    src: url('.assets/fonts/Lobster-Regular.ttf');
+    font-family: figtree;
+    src: url('.assets/fonts/Figtree-Regular.ttf');
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url('./assets/fonts/Poppins-Bold.ttf');
+    font-family: WorkSans;
+    src: url('./assets/fonts/WorkSans-SemiBold.ttf');
 }
 
 /* Fin configuracion */
@@ -84,6 +84,8 @@ nav ul li a:hover{
 
 /* Fin header */
 
+/* Titulo y boton para añadir */
+
 .icon{
     display: flex;
     margin: 25px 0px 0px 12px;
@@ -109,7 +111,12 @@ button{
     color: var(--light-color);
     border:none;
     border-radius: 3px;
+    cursor: pointer;
 }
+
+/*fin del Titulo y boton para añadir */
+
+/* Formulario del modal */
 
 form input{
     margin-top: 20px;
@@ -175,6 +182,9 @@ form select:focus{
     outline: none;
 }
 
+/* FIn del Formulario del modal */
+
+/* Tabla de productos */
 table{
     margin: 25px 0px 0px 0px;
     font-size: 20px;
@@ -205,27 +215,39 @@ td{
     background: red;
     border-radius: 3px;
     font-family: var(--menu);
+    width: auto;
+    height: auto;
 }
 
 .editar{
     text-decoration: none;
-    padding: 2px 5px 2px 5px;
+    padding: 2px;
     color: white;
     background: green;
     border-radius: 3px;
     font-family: var(--menu);
+    width: auto;
+    height: auto;
 }
 
+/*FIN de Tabla de productos */
+
+/* Footer */
 footer{
     background: var(--fondosNaranjas);
     width: 100%;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 100px;
     position:absolute;
+    font-family: var(--menu);
 } 
+
+/*Fin del footer */
+
+/* Modal*/
 
 .modal::backdrop{
     background: rgba(0,0,0, 0.5);
-    transform: translateY(-100%);
-    
 }
+
+/* Fin del Modal*/

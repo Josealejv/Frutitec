@@ -41,47 +41,42 @@
     </header>
 
     <?php
-    $idproducto = $_GET['idproducto'];
+    $idProductoInventario = $_GET['idProductoInventario'];
 
     include 'conexion1.php';
-    $sql = "SELECT * FROM registroproductos WHERE idproducto='" . $idproducto . "'";
+    $sql = "SELECT * FROM inventario WHERE idProductoInventario='" . $idProductoInventario . "'";
     $result = mysqli_query($conexion, $sql);
 
     if ($mostrar = mysqli_fetch_array($result)) {
 
-        $tipo = $mostrar['tipo'];
-        $nombre = $mostrar['nombre'];
+        $nombreProducto = $mostrar['nombreProducto'];
+        $costo = $mostrar['costo'];
         $descripcion = $mostrar['descripcion'];
-        $precio = $mostrar['precio'];
+        $cantidad = $mostrar['cantidad'];
     }
     ?>
 
     <div class="padre">
         <div class="hijo">
-            <form action="sp_editarProducto.php?" method="post">
+            <form action="sp_editarInventario.php?" method="post">
                 <table>
                     <th>
-                        <h2>Editar Cliente</h2>
+                        <h2>Editar Inventario</h2>
                     </th>
 
                     <tr>
-                        <td><input type="hidden" name="idproducto" id="" value="<?= $idproducto ?>"></td>
+                        <td><input type="hidden" name="idProductoInventario" id="" value="<?= $idProductoInventario ?>"></td>
                     </tr>
 
                     <tr>
-                        <td>Tipo</td>
-                        <td><select type="text" name="tipo" id="tipo">
-                                <option disabled <?=empty($tipo) ?>selected>Seleccionar</option>
-                                <option value="Jugo" <?=$tipo==='Jugo'?>selected>Jugo</option>
-                                <option value="Refreso" <?=$tipo==='Refresco'?>selected>Refresco</option>
-                                <option value="Alimento" <?=$tipo==='Alimento'?>selected>Alimento</option>
-                            </select>
+                        <td>Nombre del Producto</td>
+                        <td><input type="text" name="nombreProducto" id="" value="<?= $nombreProducto ?>" required="" pattern="[a-zA-Z\s]+">
                         </td>
                     </tr>
 
                     <tr>
-                        <td>Nombre</td>
-                        <td><input type="text" name="nombre" id="" value="<?= $nombre ?>" required="" pattern="[a-zA-Z\s]+"></td>
+                        <td>Costo</td>
+                        <td><input type="text" name="costo" id="" value="<?= $costo ?>" required="" pattern="^\d+(,\d+)?$"></td>
                     </tr>
 
                     <tr>
@@ -90,14 +85,14 @@
                     </tr>
 
                     <tr>
-                        <td>Precio</td>
-                        <td><input type="text" name="precio" id="" value="<?= $precio ?>" required="" pattern="^\d+(,\d+)?$"></td>
+                        <td>Cantidad</td>
+                        <td><input type="text" name="cantidad" id="" value="<?= $cantidad ?>" required="" pattern="^\d+(,\d+)?$"></td>
                     </tr>
 
                     <tr>
                         <td><input type="submit" value="Actualizar" name="insertar" class="actualizar"></td>
 
-                        <td><a href="productos.php">Volver</a></td>
+                        <td><a href="inventario.php">Volver</a></td>
                     </tr>
 
 
